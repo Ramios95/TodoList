@@ -59,16 +59,16 @@ app.delete("/deletetask/:taskid", function(req, res) {
   res.send(tab);
 });
 
-app.put("/edittask/:taskId", (req, res) => {
+app.put("/edittask/:taskId", function(req, res) {
   taskToEdit = tab.find(t => t.id === parseInt(req.params.taskId));
   const { title, description } = req.body;
-  console.log(req.body);
+
   taskToEdit.description = description;
   taskToEdit.title = title;
-  //taskToEdit.duedate = convertDate(duedate);
+  taskToEdit.duedate = convertDate(duedate);
   taskToEdit.updatedAt = convertDate2(new Date());
 
-  return taskToEdit;
+  res.send(tab);
 });
 
 function convertDate(date) {
