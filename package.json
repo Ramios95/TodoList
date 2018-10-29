@@ -1,0 +1,22 @@
+{
+  "name": "mytodolist-app",
+  "version": "1.0.0",
+  "description": "This app has been created to test my skills",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "license": "MIT",
+  "contributors": [
+    "Rami YOUSFI"
+  ],
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.4",
+    "express": "^4.16.3",
+    "font-awesome": "^4.7.0"
+  }
+}

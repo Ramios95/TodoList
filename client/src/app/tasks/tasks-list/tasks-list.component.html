@@ -1,0 +1,25 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Completed</th>
+      <th scope="col">Title</th>
+      <th scope="col">Description</th>
+      <th scope="col">Due Date</th>
+      <th scope="col">Created Date</th>
+      <th scope="col">Updated Date</th>
+      <th scope="col">Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+          <tr *ngFor='let task of tasks'>
+            <td class="completedField"> <input id="regular-checkbox" type="checkbox" class="list-child" (change)="onTaskChange($event,task)" [checked]="task.completed"></td>
+            <td>{{ task.title}}</td>
+            <td>{{ task.description}}</td>
+            <td class="dateField"><span class="label {{ getDueDateLabel(task) }}">{{task.duedate}}</span></td>
+            <td class="dateField"><span class="label {{ getDueDateLabel(task) }}">{{task.createdAt}}</span></td>
+            <td class="dateField"><span class="label {{ getDueDateLabel(task) }}">{{task.updatedAt}}</span></td>
+            <td class="buttonField"><button type="button" class="btn btn-danger" (click)="onTaskDelete($event,task)">Delete</button></td>
+      
+  </tr>
+  </tbody>
+</table>
