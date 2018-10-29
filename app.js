@@ -23,7 +23,7 @@ app.listen(config.port, function() {
   );
 });
 
-app.post("/newtask", function(req, res) {
+app.post("/task", function(req, res) {
   var date = convertDate(req.body.duedate);
   var date2 = convertDate2(new Date());
   task = new Task(
@@ -51,7 +51,7 @@ app.post("/", function(req, res) {
   tab[index].completed = !tab[index].completed;
 });
 
-app.delete("/deletetask/:taskid", function(req, res) {
+app.delete("/task/:taskid", function(req, res) {
   idtask = req.params.taskid;
   task1 = tab.find(x => x.id === parseInt(idtask));
   index = tab.indexOf(task1);
@@ -59,13 +59,14 @@ app.delete("/deletetask/:taskid", function(req, res) {
   res.send(tab);
 });
 
-app.put("/edittask/:taskId", function(req, res) {
+app.put("/task/:taskId", function(req, res) {
   taskToEdit = tab.find(t => t.id === parseInt(req.params.taskId));
-  const { title, description } = req.body;
+  const { title, description, duedate } = req.body;
 
   taskToEdit.description = description;
   taskToEdit.title = title;
   taskToEdit.duedate = convertDate(duedate);
+
   taskToEdit.updatedAt = convertDate2(new Date());
 
   res.send(tab);
