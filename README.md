@@ -1,8 +1,21 @@
-## Requirement
-install node.js v10.3
+## Clone TodoList:
 
-## Run server on 8080 port:
+Clone the repository
+
+## Install Dependencies:
+
+```
+cd app
 npm install
-npm start
+```
 
+## Run the Application:
 
+Go to the app repository and start the application
+
+```
+cd ..
+npm run dev
+```
+
+Now browse to the app at localhost:4000/

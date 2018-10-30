@@ -5,7 +5,8 @@
   "scripts": {
     "start": "node app.js",
     "client": "cd client && ng serve -o",
-    "dev": "concurrently \"npm start\" \"npm run client\""
+    "dev": "concurrently \"npm start\" \"npm run client\"",
+    "postinstall": "cd client && npm install"
   },
   "license": "MIT",
   "contributors": [
